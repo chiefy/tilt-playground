@@ -1,0 +1,8 @@
+v1alpha1.extension_repo(name='custom', url='https://github.com/chiefy/tilt-extensions', ref='main')
+v1alpha1.extension(name='hello', repo_name='custom', repo_path='hello-world')
+
+allow_k8s_contexts(k8s_context())
+
+load('ext://hello', 'say_hello')
+
+say_hello()
